@@ -34,7 +34,10 @@ public:
     size_t GetStartIndex()const{
         return _startIndex;
     };
-    T& At(size_t pos);//реализуем чтобы не было выхода за границы массива и undefined поведение
+    T& At(size_t pos){
+        if(pos>=_size) throw "Out of range. "
+        return _array[pos]
+    };//реализуем чтобы не было выхода за границы массива и undefined поведение
     Vector& operator=(const Vector& tmp){
         delete [] _array;
         
@@ -72,7 +75,7 @@ public:
             copy._array[i] -= tmp._array[i];
         return copy;
     };
-    Vector operator*(const Vector& tmp);
+
     T operator*(const Vector& tmp){
         if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw:"Incompatible sizes of vectors. ";
         T ans;
@@ -82,6 +85,31 @@ public:
     };
     T& operator[](size_t pos)const{
         return _array[pos];
+    }
+    friend std::ostream& operator<<(std::ostream& os, const Vector& vect){
+        os<<"(";
+        for(int i=0; i<vect._size+vect.GetStartIndex();i++){
+            if(vect._start_index>i)
+            os<<0<<", ";
+            else{
+            os<<vect._array[i-vect._start_index];
+            if(i+1!=vect._size+vect.GetStartIndex())
+                os<<", ";
+            }
+        }
+        os<<")";
+        return os;
+    }
+
+    friend std::istream& operator>>(std::istream& istr, Vector& vec){
+        T current;
+        for (size_t i=0; i<vec._size; i++){
+            std::cout<<"elem n"<<i+vec._start_index<<": ";
+            istr>>current;
+            vec._array[i]=current;
+
+        }
+        return istr;
     }
     //плюс ввод вывод
     ~Vector(){
