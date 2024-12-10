@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Code/Matrix/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\main.dir\\main.cpp.obj -c D:\\Code\\Matrix\\main.cpp",
+  "file": "D:\\Code\\Matrix\\main.cpp",
+  "output": "CMakeFiles\\main.dir\\main.cpp.obj"
+}
+]
