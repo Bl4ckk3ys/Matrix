@@ -12,7 +12,7 @@ public:
         _size = size;
         _startIndex = startIndex;
         _array = new T[_size];
-        for(size_t = 0; i < size; i++)
+        for(size_t i = 0; i < _size; i++)
             _array[i] = 0;
     };
     Vector(const Vector& tmp){
@@ -35,8 +35,8 @@ public:
         return _startIndex;
     };
     T& At(size_t pos){
-        if(pos>=_size) throw "Out of range. "
-        return _array[pos]
+        if(pos>=_size) throw "Out of range. ";
+        return _array[pos];
     };//реализуем чтобы не было выхода за границы массива и undefined поведение
     Vector& operator=(const Vector& tmp){
         delete [] _array;
@@ -61,7 +61,7 @@ public:
         return copy;
     };
     Vector operator+(const Vector& tmp){
-        if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw:"Incompatible sizes of vectors. ";
+        if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw "Incompatible sizes of vectors. ";
         Vector copy(*this);
         for(size_t i = 0;i < _size; i++)
             copy._array[i] += tmp._array[i];
@@ -69,7 +69,7 @@ public:
     };
 
     Vector operator-(const Vector& tmp){
-        if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw:"Incompatible sizes of vectors. ";
+        if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw "Incompatible sizes of vectors. ";
         Vector copy(*this);
         for(size_t i = 0;i < _size; i++)
             copy._array[i] -= tmp._array[i];
@@ -77,7 +77,7 @@ public:
     };
 
     T operator*(const Vector& tmp){
-        if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw:"Incompatible sizes of vectors. ";
+        if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw "Incompatible sizes of vectors. ";
         T ans;
         for(size_t i = 0; i < _size;i++)
             ans+= _array[i]*tmp._array[i];
@@ -88,11 +88,11 @@ public:
     }
     friend std::ostream& operator<<(std::ostream& os, const Vector& vect){
         os<<"(";
-        for(int i=0; i<vect._size+vect.GetStartIndex();i++){
-            if(vect._start_index>i)
+        for(int i = 0; i < vect._size+vect.GetStartIndex(); i++){
+            if(vect._startIndex>i)
             os<<0<<", ";
             else{
-            os<<vect._array[i-vect._start_index];
+            os<<vect._array[i-vect._startIndex];
             if(i+1!=vect._size+vect.GetStartIndex())
                 os<<", ";
             }
@@ -103,10 +103,10 @@ public:
 
     friend std::istream& operator>>(std::istream& istr, Vector& vec){
         T current;
-        for (size_t i=0; i<vec._size; i++){
-            std::cout<<"elem n"<<i+vec._start_index<<": ";
+        for (size_t i = 0; i < vec._size; i++){
+            std::cout<<"Elem "<<i+vec._startIndex<<": ";
             istr>>current;
-            vec._array[i]=current;
+            vec._array[i] = current;
 
         }
         return istr;
