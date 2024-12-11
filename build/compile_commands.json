@@ -1,8 +1,7 @@
 [
 {
-  "directory": "D:/Code/Matrix/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\main.dir\\main.cpp.obj -c D:\\Code\\Matrix\\main.cpp",
-  "file": "D:\\Code\\Matrix\\main.cpp",
-  "output": "CMakeFiles\\main.dir\\main.cpp.obj"
+  "directory": "/home/s23380420@unn.global/Projects/Matrix/build",
+  "command": "/usr/bin/g++-12   -g -o CMakeFiles/main.dir/main.cpp.o -c /home/s23380420@unn.global/Projects/Matrix/main.cpp",
+  "file": "/home/s23380420@unn.global/Projects/Matrix/main.cpp"
 }
 ]
