@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Vector.h"
+#include "Matrix.h"
 
 int main(){
     // Vector<int> vec1(5, 0);
@@ -9,7 +9,12 @@ int main(){
     // Vector<int> vec3(std::move(vec1));
     // std::cout<<"\n"<<vec2<<"\n"<<vec3<<"\n";
 
+    Matrix<int> m1(2);
+    Matrix<int> m2(2);
 
+    std::cin>>m2;
+
+    std::cout<<"\n"<<m2;
 
 
 

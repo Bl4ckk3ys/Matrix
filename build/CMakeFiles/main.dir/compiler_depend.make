@@ -184,8 +184,11 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
+  ../Matrix.h \
   ../Vector.h
 
+
+../Matrix.h:
 
 /usr/include/c++/12/bits/basic_ios.tcc:
 

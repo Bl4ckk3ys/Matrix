@@ -8,6 +8,11 @@ protected:
     size_t _size;
     size_t _startIndex;
 public:
+    Vector(size_t size = 10){
+        _size = size;
+        _startIndex = 0;
+        _array = new T[_size];
+    }
     Vector(size_t size, size_t startIndex){
         _size = size;
         _startIndex = startIndex;
