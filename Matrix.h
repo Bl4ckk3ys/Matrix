@@ -28,9 +28,7 @@ public:
             for (size_t j=0;j<s;j++){
                 for (size_t z=0;z<j+1;z++){
                     res[i][j]+=_array[i][z]*matrix[i+z][j-z];
-
                 }
-                
             }
             s--;
         }
