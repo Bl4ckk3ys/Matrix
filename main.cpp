@@ -10,7 +10,7 @@ int main(){
     // std::cout<<"\n"<<vec2<<"\n"<<vec3<<"\n";
 
     Matrix<int> m1(2);
-    Matrix<int> m2(2);
+    Matrix<int> m2(3);
 
     std::cin>>m2;
 

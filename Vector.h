@@ -44,8 +44,14 @@ public:
         return _array[pos];
     };//реализуем чтобы не было выхода за границы массива и undefined поведение
     Vector& operator=(const Vector& tmp){
+        _size = tmp._size;
+        _startIndex = tmp._startIndex;
         delete [] _array;
-        
+        _array = nullptr;
+        _array = new T[_size];
+        for(size_t i = 0; i < _size; i++)
+            _array[i] = tmp._array[i];
+        return *this;        
     };
     Vector operator+(const T& tmp){
         Vector copy(*this);
@@ -106,17 +112,13 @@ public:
         return os;
     }
 
-    friend std::istream& operator>>(std::istream& istr, Vector& vec){
-        T current;
+    friend std::istream& operator>>(std::istream& is, Vector& vec){
         for (size_t i = 0; i < vec._size; i++){
             std::cout<<"Elem "<<i+vec._startIndex<<": ";
-            istr>>current;
-            vec._array[i] = current;
-
+            is>>vec._array[i];
         }
-        return istr;
+        return is;
     }
-    //плюс ввод вывод
     ~Vector(){
         delete [] _array;
         _array = nullptr;
