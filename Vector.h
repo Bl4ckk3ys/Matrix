@@ -53,25 +53,25 @@ public:
             _array[i] = tmp._array[i];
         return *this;        
     };
-    Vector operator+(const T& tmp){
+    Vector operator+(const T& tmp)const{
         Vector copy(*this);
         for(size_t i = 0; i < _size; i++)
             copy._array[i] += tmp;
         return copy;
     };
-    Vector operator-(const T& tmp){
+    Vector operator-(const T& tmp)const{
         Vector copy(*this);
         for(size_t i = 0;i < _size; i++)
             copy._array[i] -= tmp;
         return copy;
     };
-    Vector operator*(const T& tmp){
+    Vector operator*(const T& tmp)const{
         Vector copy(*this);
         for(size_t i = 0;i < _size; i++)
             copy._array[i] *= tmp;
         return copy;
     };
-    Vector operator+(const Vector& tmp){
+    Vector operator+(const Vector& tmp)const{
         if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw "Incompatible sizes of vectors. ";
         Vector copy(*this);
         for(size_t i = 0;i < _size; i++)
@@ -79,7 +79,7 @@ public:
         return copy;
     };
 
-    Vector operator-(const Vector& tmp){
+    Vector operator-(const Vector& tmp)const{
         if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw "Incompatible sizes of vectors. ";
         Vector copy(*this);
         for(size_t i = 0;i < _size; i++)
@@ -87,7 +87,7 @@ public:
         return copy;
     };
 
-    T operator*(const Vector& tmp){
+    T operator*(const Vector& tmp)const{
         if(_size!=tmp._size || _startIndex!=tmp._startIndex) throw "Incompatible sizes of vectors. ";
         T ans;
         for(size_t i = 0; i < _size;i++)
